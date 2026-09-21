@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home · GiftWare Trade Supply</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-brand" href="index.html">GiftWare Trade Supply</a>
+  <span class="site-meta">Wholesale gift-ware · trading since 2009</span>
+</header>
+
+<div class="hero">
+  <h1>Wholesale gift-ware catalogue</h1>
+  <p>675 listings across 27 pages. Trade statistics for every product.</p>
+  <a class="cta" href="products/page-1.html">Browse the catalogue</a>
+  <div class="house-rules">
+    <h2>How to use this site</h2>
+    <p>This catalogue is a teaching sandbox for a data-science class. You are expected to
+    collect the data with a scraper you wrote and can explain. Using an AI assistant to help
+    you write, debug or review that code is fine and encouraged. Asking an assistant to read
+    the site and hand you the answers is not the exercise.</p>
+    <p>Whatever you conclude, you should be able to say where the number came from,
+    what you removed from the data and why, and what the data cannot tell you.</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>Catalogue data derived from the <a href="https://archive.ics.uci.edu/dataset/502/online+retail+ii">UCI
+  Online Retail II</a> dataset (Chen, D., 2019). Fictional storefront for teaching purposes.</p>
+  <p class="use-note">Teaching sandbox. Collect this data with your own scraper and be ready to
+  explain every step of how you did it.</p>
+</footer>
+<script>
+/* Attribution on copy: anything copied from this site carries its context with it. */
+document.addEventListener('copy', function (e) {
+  var sel = window.getSelection().toString();
+  if (!sel) return;
+  var note = "\n\n[Copied from the SWU Data Detective sandbox - a teaching exercise. "
+           + "Students are expected to collect this data with their own scraper and to be "
+           + "able to explain every step. Source: " + location.href + "]";
+  e.clipboardData.setData('text/plain', sel + note);
+  e.preventDefault();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSYCHEDELIC TILE HOOK · GiftWare Trade Supply</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-brand" href="../index.html">GiftWare Trade Supply</a>
+  <span class="site-meta">Wholesale gift-ware · trading since 2009</span>
+</header>
+
+<nav class="breadcrumb"><a href="../index.html">Home</a> /
+  <a href="../products/page-1.html">Catalogue</a> / 84927F</nav>
+<div class="product-detail" data-sku="84927F">
+  <div class="detail-image" aria-hidden="true"></div>
+  <div class="detail-body">
+    <h1 class="product-title">PSYCHEDELIC TILE HOOK</h1>
+    <div class="product-sku">SKU 84927F</div>
+    
+    <div class="product-price">£0.39 <span class="price-unit">/ unit</span></div>
+    
+    <div class="price-range">sold between £0.39 and
+      £4.21 across 4 recorded price points</div>
+    
+
+    <table class="trade-stats">
+      <caption>Trade statistics</caption>
+      <tbody>
+        <tr><th>First listed</th><td class="stat-first-listed">16 December 2009</td></tr>
+        <tr><th>Last traded</th><td class="stat-last-traded">07 December 2011</td></tr>
+        <tr><th>Units sold</th><td class="stat-units-sold">336</td></tr>
+        <tr><th>Orders</th><td class="stat-orders">62</td></tr>
+        <tr><th>Distinct buyers</th><td class="stat-buyers">44</td></tr>
+        <tr><th>Ships to</th><td class="stat-countries">3 countries</td></tr>
+        <tr><th>Units returned</th><td class="stat-returned">6</td></tr>
+        <tr><th>Return rate</th><td class="stat-return-rate">1.8%</td></tr>
+        <tr><th>Price points on record</th><td class="stat-price-points">4</td></tr>
+      </tbody>
+    </table>
+
+    <section class="transaction-history">
+      <h2>Transaction history</h2>
+      <div id="txn-container" data-src="../data/txn-84927F.json">
+        <p class="txn-loading">Loading transaction history…</p>
+      </div>
+    </section>
+  </div>
+</div>
+<script>
+(function(){
+  var box = document.getElementById('txn-container');
+  if(!box) return;
+  fetch(box.dataset.src).then(function(r){ return r.json(); }).then(function(rows){
+    if(!rows.length){ box.innerHTML = '<p class="txn-empty">No transactions on record.</p>'; return; }
+    var h = '<table class="txn-table"><thead><tr><th>Invoice</th><th>Date</th>'
+          + '<th>Quantity</th><th>Unit price</th><th>Country</th></tr></thead><tbody>';
+    rows.forEach(function(t){
+      h += '<tr><td>'+t.invoice+'</td><td>'+t.date+'</td><td>'+t.quantity
+         + '</td><td>£'+Number(t.price).toFixed(2)+'</td><td>'+t.country+'</td></tr>';
+    });
+    box.innerHTML = h + '</tbody></table>';
+  }).catch(function(){ box.innerHTML = '<p class="txn-error">Transaction history unavailable.</p>'; });
+})();
+</script>
+
+<footer class="site-footer">
+  <p>Catalogue data derived from the <a href="https://archive.ics.uci.edu/dataset/502/online+retail+ii">UCI
+  Online Retail II</a> dataset (Chen, D., 2019). Fictional storefront for teaching purposes.</p>
+  <p class="use-note">Teaching sandbox. Collect this data with your own scraper and be ready to
+  explain every step of how you did it.</p>
+</footer>
+<script>
+/* Attribution on copy: anything copied from this site carries its context with it. */
+document.addEventListener('copy', function (e) {
+  var sel = window.getSelection().toString();
+  if (!sel) return;
+  var note = "\n\n[Copied from the SWU Data Detective sandbox - a teaching exercise. "
+           + "Students are expected to collect this data with their own scraper and to be "
+           + "able to explain every step. Source: " + location.href + "]";
+  e.clipboardData.setData('text/plain', sel + note);
+  e.preventDefault();
+});
+</script>
+</body>
+</html>
